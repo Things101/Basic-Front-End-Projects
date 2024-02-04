@@ -1,9 +1,15 @@
-*, ::before, ::after{
+*, *::before, *::after{
     box-sizing: border-box;
 }
 
-#header-img{
+#logo{
     width: 100px;
     height: 100px;
+    object-fit: cover;
+}
+
+img[src="Laptop.png"]{
+    width: 300px;
+    height: 300px;
     object-fit: cover;
 }
