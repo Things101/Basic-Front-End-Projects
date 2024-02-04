@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Basics of CSS</title>
+    </head>
+    <body>
+        <nav id="navbar">
+            <header>Basics of CSS</header>
+            <ul>
+                <li><a class="nav-link" href="#introduction_to_css">Introduction To CSS</a></li>
+                <li><a class="nav-link" href="#prerequisites">Prerequisites</a></li>
+                <li><a class="nav-link" href="#css_selectors">CSS Selectors</a></li>
+                <li><a class="nav-link" href="#type_class_id_selectors">Type Class Id Selectors</a></li>
+                <li><a class="nav-link" href="#attribute_selectors">Attribute Selectors</a></li>
+                <li><a class="nav-link" href="#pseudo_class_and_elements">Pseudo Class and Elements</a></li>
+                <li><a class="nav-link" href="#combinators">Combinators</a></li>
+                <li><a class="nav-link" href="#cascade_specificity_inheritance">Cascade Specificity Inheritance</a></li>
+                <li><a class="nav-link" href="#cascade_layers">Cascade Layers</a></li>
+                <li><a class="nav-link" href="#the_box_model">The Box Model</a></li>
+                <li><a class="nav-link" href="#background_and_borders">Background And Borders</a></li>
+                <li><a class="nav-link" href="#text_directions">Text Directions</a></li>
+                <li><a class="nav-link" href="#overflowing_content">Overflowing Content</a></li>
+                <li><a class="nav-link" href="#values_and_units">Values and Units</a></li>
+                <li><a class="nav-link" href="#sizing_items">Sizing Items</a></li>
+                <li><a class="nav-link" href="#images_media_form_elements">Images Media Form Elements</a></li>
+                <li><a class="nav-link" href="#references">References</a></li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="introduction_to_css">
+                <header>Introduction To CSS</header>
+                <article>
+                    <p>CSS can be used for very basic document text styling — for example, for changing the color and size of headings and links. It can be used to create a layout — for example, turning a single column of text into a layout with a main content area and a sidebar for related information. It can even be used for effects such as animation.</p>
+                    <p>Here is a basic sample of what CSS looks like:</p>
+                    <div>
+                        <code>.sampleClass{
+                            background-color: #fff;
+                            padding: 3px;
+                        }
+                        </code>
+                    </div>
+                    <ul>
+                        <li>We see a selector, specifically a <a href="#type_class_id_selectors">class selector</a>. This selects the class that we are going to style.</li>
+                        <li>We then have a set of curly braces <code>{}</code>.</li>
+                        <li>Inside the braces will be one or more declarations, which take the form of property and value pairs.</li>
+                        <li>This example contains two declarations, one for <code>background-color</code> and other for <code>padding</code>.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="prerequisites">
+                <header>Prerequisites</header>
+                <article>
+                    <ol>
+                        <li>Basic familiarity with using computers, and using the Web passively (i.e., just looking at it, consuming the content).</li>
+                        <li>A basic work environment set up as detailed in Installing basic software, and an understanding of how to create and manage files, as detailed in Dealing with files.</li>
+                        <li>Basic familiarity with HTML.</li>
+                    </ol>
+                </article>
+            </section>
+            <section class="main-section" id="css_selectors">
+                <header>CSS Selectors</header>
+                <article>
+                    <p>A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. The element or elements which are selected by the selector are referred to as the subject of the selector.</p>
+                    <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/selector.png">
+                    <p>If you have more than one thing which uses the same CSS then the individual selectors can be combined into a selector list so that the rule is applied to all of the individual selectors.</p>
+                    <div> 
+                        <code>p, .sample{
+                                color: rgb(0,0,0);
+                                }
+                        </code>
+                    </div>
+                    <p>There are many different type of selectors. Three basic types are:</p>
+                    <ol>
+                        <li>Type selectors target an HTML element such as an h1.</li>
+                        <li>Class selectors target an element that has a specific value for its <code>class</code> attribute.</li>
+                        <li>ID selectors target an element that has a specific value for its <code>id</code> attribute.</li>
+                    </ol>
+                </article>
+            </section>
+            <section class="main-section" id="type_class_id_selectors">
+                <header>Type Class ID Selectors</header>
+                <article>
+                    <ul>
+                        <li>A type selector is sometimes referred to as a tag name selector or element selector because it selects an HTML tag/element in your document. Type selectors are not case-sensitive.</li>
+                        <li>The universal selector is indicated by an asterisk (*). It selects everything in the document (or inside the parent element if it is being chained together with another element and a descendant combinator).</li>
+                        <li>The case-sensitive class selector starts with a dot <code>(.)</code> character. It will select everything in the document with that class applied to it.</li>
+                        <li>The case-sensitive ID selector begins with a <code>#</code> rather than a dot character, but is used in the same way as a class selector. However, an ID can be used only once per page, and elements can only have a single id value applied to them. It can select an element that has the id set on it, and you can precede the ID with a type selector to only target the element if both the element and ID match.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="attribute_selectors">
+                <header>Attribute Selectors</header>
+                <article>
+                    <table>
+                        <tbody>
+                            <tr class="header-row">
+                                <th>Selector</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td><code>[attr]</code></td>
+                                <td><code>a[title]</code></td>
+                                <td>Matches elements with an attr attribute (whose name is the value in square brackets).</td>
+                            </tr>
+                            <tr>
+                                <td><code>[attr=value]</code></td>
+                                <td><code>a[href="https://example.com"]</code></td>
+                                <td>Matches elements with an attr attribute whose value is exactly value — the string inside the quotes.</td>
+                            </tr>
+                            <tr>
+                                <td><code>[attr~=value]</code></td>
+                                <td><code>p[class~="special"]</code></td>
+                                <td>Matches elements with an attr attribute whose value is exactly value, or contains value in its (space separated) list of values.</td>
+                            </tr>
+                            <tr>
+                                <td><code>[attr|=value]</code></td>
+                                <td><code>div[lang|="zh"]</code></td>
+                                <td>Matches elements with an attr attribute whose value is exactly value or begins with value immediately followed by a hyphen.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section class="main-section" id="pseudo_class_and_elements">
+                <header>Pseudo Class and Elements</header>
+                <article>
+                    <p>A pseudo-class is a selector that selects elements that are in a specific state, e.g. they are the first element of their type, or they are being hovered over by the mouse pointer. They tend to act as if you had applied a class to some part of your document, often helping you cut down on excess classes in your markup, and giving you more flexible, maintainable code.</p>
+                    <ul>
+                        <li>Pseudo Classes
+                            <ul>
+                                <li><code>:first-child</code></li>
+                                <p>This will always target the first child element in the article</p>
+                                <li><code>:last-child</code></li>
+                                <p>This represents the last element among a group of sibling elements</p>
+                                <li><code>:only-child</code></li>
+                                <p>This represents an element without any siblings</p>
+                                <li><code>:invalid</code></li>
+                                <p> This represents any form, fieldset, input or other form element whose contents fail to validate.</p>
+                            </ul>
+                        </li>
+                        <li>User-action Pseudo Classes
+                            <p>Some pseudo-classes only apply when the user interacts with the document in some way. These user-action pseudo-classes, sometimes referred to as dynamic pseudo-classes, act as if a class had been added to the element when the user interacts with it</p>
+                            <ul>
+                                <li><code>:hover</code></li>
+                                <p>This only applies if the user moves their pointer over an element, typically a link.</p>
+                                <li><code>:focus</code></li>
+                                <p>Only applies if the user focuses the element by clicking or using keyboard controls.</p>
+                            </ul>
+                        </li>
+                        <li>Pseudo Element
+                            <p>Pseudo-elements behave in a similar way. However, they act as if you had added a whole new HTML element into the markup, rather than applying a class to existing elements.</p>
+                            <p>Pseudo-elements start with a double colon <code>::</code>.</p>
+                            <ul>
+                                <li><code>::first-line</code></li>
+                                <li><code>::before</code></li>
+                                <li><code>::after</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="combinators">
+                <header>Combinators</header>
+                <article>
+                    <p>The descendant combinator — typically represented by a single space (" ") character — combines two selectors such that elements matched by the second selector are selected if they have an ancestor (parent, parent's parent, parent's parent's parent, etc.) element matching the first selector. Selectors that utilize a descendant combinator are called descendant selectors.</p>
+                    <p>The child combinator <code>(>)</code> is placed between two CSS selectors. It matches only those elements matched by the second selector that are the direct children of elements matched by the first. Descendant elements further down the hierarchy don't match.</p>
+                    <p>The next-sibling combinator <code>(+)</code> is placed between two CSS selectors. It matches only those elements matched by the second selector that are the next sibling element of the first selector.</p>
+                    <p>If you want to select siblings of an element even if they are not directly adjacent, then you can use the subsequent-sibling combinator <code>(~)</code>.</p>
+                </article>
+            </section>
+            <section class="main-section" id="cascade_specificity_inheritance">
+                <header>Cascade Specificity Inheritance</header>
+                <article>
+                    <p>Stylesheets cascade — at a very simple level, this means that the origin, the cascade layer, and the order of CSS rules matter. When two rules from the same cascade layer apply and both have equal specificity, the one that is defined last in the stylesheet is the one that will be used.</p>
+                    <p>Specificity is the algorithm that the browser uses to decide which property value is applied to an element. If multiple style blocks have different selectors that configure the same property with different values and target the same element, specificity decides the property value that gets applied to the element. Specificity is basically a measure of how specific a selector's selection will be:</p>
+                    <ul>
+                        <li>An element selector is less specific; it will select all elements of that type that appear on a page, so it has less weight. Pseudo-element selectors have the same specificity as regular element selectors.</li>
+                        <li>A class selector is more specific; it will select only the elements on a page that have a specific class attribute value, so it has more weight. Attribute selectors and pseudo-classes have the same weight as a class.</li>
+                    </ul>
+                    <p>Some CSS property values set on parent elements are inherited by their child elements, and some aren't.</p>
+                </article>
+            </section>
+            <section class="main-section" id="cascade_layers">
+                <header>Cascade Layers</header>
+                <article>
+                    <p>There are three cascade origin types: user-agent stylesheets, user stylesheets, and author stylesheets. The browser sorts each declaration into six origin buckets by origin and importance. There are eight levels of precedence: the six origin buckets, properties that are transitioning, and properties that are animating. The order of precedence goes from normal user-agent styles, which have the lowest precedence, to styles within currently applied animations, to important user-agent styles, and then styles being transitioned, which have the highest precedence:</p>
+                    <ol>
+                        <li>user-agent normal styles</li>
+                        <li>user normal styles</li>
+                        <li>author normal styles</li>
+                        <li>styles being animated</li>
+                        <li>author important styles</li>
+                        <li>user important styles</li>
+                        <li>user-agent important styles</li>
+                        <li>styles being transitioned</li>
+                    </ol>
+                    <p>The "user-agent" is the browser. The "user" is the site visitor. The "author" is you, the developer. Styles declared directly on an element with the <code>&lt;style&gt;</code> element are author styles. Not including animating and transitioning styles, user-agent normal styles have the lowest precedence; user-agent important styles have the highest.</p>
+                </article>
+            </section>
+            <section class="main-section" id="the_box_model">
+                <header>The Box Model</header>
+                <article>
+                    <p>In CSS we have several types of boxes that generally fit into the categories of block boxes and inline boxes. The type refers to how the box behaves in terms of page flow and in relation to other boxes on the page. Boxes have an inner display type and an outer display type.</p>
+                    <h2>Outer Display Type</h2>
+                    <p>If a box has an outer display type of <code>block</code>, then:</p>
+                    <ul>
+                        <li>The box will break onto a new line.</li>
+                        <li>The <code>width</code> and <code>height</code> properties are respected.</li>
+                        <li>Padding, margin and border will cause other elements to be pushed away from the box.</li>
+                        <li>If width is not specified, the box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.</li>
+                    </ul>
+                    <p>If a box has an outer display type of <code>inline</code>, then:</p>
+                    <ul>
+                        <li>The box will not break onto a new line.</li>
+                        <li>The <code>width</code> and <code>height</code> properties will not apply.</li>
+                        <li>Top and bottom padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.</li>
+                        <li>Left and right padding, margins, and borders will apply and will cause other inline boxes to move away from the box.</li>
+                    </ul>
+                    <h2>Inner Display Type</h2>
+                    <p>Boxes also have an inner display type, which dictates how elements inside that box are laid out.</p>
+                    <p>Block and inline layout is the default way things behave on the web. By default and without any other instruction, the elements inside a box are also laid out in normal flow and behave as block or inline boxes.</p>
+                    <p>You can change the inner display type for example by setting display: <code>flex;</code>. The element will still use the outer display type <code>block</code> but this changes the inner display type to <code>flex</code>. Any direct children of this box will become flex items and behave according to the Flexbox specification.</p>
+                </article>
+            </section>
+            <section class="main-section" id="background_and_borders">
+                <header>Background and Borders</header>
+                <article>
+                    <p>The <code>background-color</code> property defines the background color on any element in CSS. The property accepts any valid color. A background-color extends underneath the content and padding box of the element.</p>
+                    <p>The <code>background-image</code> property enables the display of an image in the background of an element.</p>
+                    <p>The <code>background-repeat</code> property is used to control the tiling behavior of images. The available values are:</p>
+                    <ul>
+                        <li>no-repeat — stop the background from repeating altogether.</li>
+                        <li>repeat-x — repeat horizontally.</li>
+                        <li>repeat-y — repeat vertically.</li>
+                        <li>repeat — the default; repeat in both directions.</li>
+                    </ul>
+                    <p>The <code>background-size</code> property allows for the adjustment of the background image</p>
+                    <p>Two keywords can be used:</p>
+                    <ul>
+                        <li>cover — the browser will make the image just large enough so that it completely covers the box area while still retaining its aspect ratio. In this case, part of the image is likely to end up outside the box.</li>
+                        <li>contain — the browser will make the image the right size to fit inside the box. In this case, you may end up with gaps on either side or on the top and bottom of the image, if the aspect ratio of the image is different from that of the box.</li>
+                    </ul>
+                    <p>The <code>background-position</code> property allows you to choose the position in which the background image appears on the box it is applied to. This uses a coordinate system in which the top-left-hand corner of the box is (0,0), and the box is positioned along the horizontal (x) and vertical (y) axes.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="text_directions">
+                <header>Text Directions</header>
+                <article>
+                    <p>A writing mode in CSS refers to whether the text is running horizontally or vertically. The writing-mode property lets us switch from one writing mode to another. You don't need to be working in a language which uses a vertical writing mode to want to do this — you could also change the writing mode of parts of your layout for creative purposes.</p>
+
+                </article>
+            </section>
+            <section class="main-section" id="overflowing_content">
+                <header>Overflowing Content</header>
+                <article>
+                    <p>Everything in CSS is a box. You can constrain the size of these boxes by assigning values of width and height (or inline-size and block-size). Overflow happens when there is too much content to fit in a box. CSS provides various tools to manage overflow.</p>
+                    <p>The overflow property helps you manage an element's content overflow. Using this property, you can convey to a browser how it should handle overflow content. The default value of the overflow value type is visible. With this default setting, one can see content when it overflows.</p>
+                    <p>To crop content when it overflows, you can set <code>overflow: hidden</code>. This does exactly what it says: it hides overflow.</p>
+                    <p>Using <code>overflow: scroll</code>, browsers with visible scrollbars will always display them—even if there is not enough content to overflow. This offers the advantage of keeping the layout consistent, instead of scrollbars appearing or disappearing, depending upon the amount of content in the container.</p>
+                    <p>To just scroll on the y axis, you could use the <code>overflow-y</code> property, setting <code>overflow-y: scroll</code>.</p>
+                    <p>If you only want scrollbars to appear when there is more content than can fit in the box, use <code>overflow: auto</code>. This allows the browser to determine if it should display scrollbars.</p>
+                </article>
+            </section>
+            <section class="main-section" id="values_and_units">
+                <header>Values and Units</header>
+                <article>
+                    <p>A <span class="bold">value</span> type in CSS is a way to define a collection of allowable values. This means that if you see color as valid you don't need to wonder which of the different types of color value can be used — keywords, hex values, rgb() functions, etc. You can use any available color values, assuming they are supported by your browser.</p>
+                    <p>There are two types of lengths used in CSS — relative and absolute.</p>
+                    <ul>
+                        <li>Absolute length units are not relative to anything else, and are generally considered to always be the same size.</li>
+                        <li>Relative length units are relative to something else, perhaps the size of the parent element's font, or the size of the viewport. The benefit of using relative units is that with some careful planning you can make it so the size of text or other elements scales relative to everything else on the page.</li>
+                    </ul>
+                    <p>Some value types accept numbers, without any unit added to them. An example of a property which accepts a unitless number is the <code>opacity</code> property, which controls the opacity of an element (how transparent it is).</p>
+                </article>
+            </section>
+            <section class="main-section" id="sizing_items">
+                <header>Sizing Items</header>
+                <article>
+                    <p>HTML Elements have a natural size, set before they are affected by any CSS. A straightforward example is an image. An image file contains sizing information, described as its intrinsic size. This size is determined by the image itself, not by any formatting we happen to apply.</p>
+                    <p>An empty div, on the other hand, has no size of its own. If you add a div to your HTML with no content, then give it a border as we did with the image, you will see a line on the page. This is the collapsed border on the element — there is no content to hold it open</p>
+                    <p>When using a percentage you need to be aware what it is a percentage of. In the case of a box inside another container, if you give the child box a percentage width it will be a percentage of the width of the parent container.</p>
+                    <p>In addition to giving things a fixed size, we can ask CSS to give an element a minimum or a maximum size. If you have a box that might contain a variable amount of content, and you always want it to be at least a certain height, you could set the min-height property on it. The box will always be at least this height, but will then grow taller if there is more content than the box has space for at its minimum height.</p>
+
+                </article>
+            </section>
+            <section class="main-section" id="images_media_form_elements">
+                <header>Images Media Form Elements</header>
+                <article>
+                    <p>Images and video are described as replaced elements. This means that CSS cannot affect the internal layout of these elements — only their position on the page amongst other elements. As we will see however, there are various things that CSS can do with an image.</p>
+                    <p>Certain replaced elements, such as images and video, are also described as having an aspect ratio. This means that it has a size in both the horizontal (x) and vertical (y) dimensions, and will be displayed using the intrinsic dimensions of the file by default.</p>
+                    <p>When using various CSS layout techniques on replaced elements, you may well find that they behave slightly differently from other elements. For example, in a flex or grid layout, elements are stretched by default to fill the entire area. Images will not stretch, and instead will be aligned to the start of the grid area or flex container.</p>
+                </article>
+            </section>
+            <section class="main-section" id="references">
+                <header>References</header>
+                <article>
+                    <ul>
+                        <li>All documentation were taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">MDN</a></li>
+                        <li>Layout was inspired by <a href="https://technical-documentation-page.freecodecamp.rocks/#Reference" target="_blank">FreeCodeCamp</a></li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
