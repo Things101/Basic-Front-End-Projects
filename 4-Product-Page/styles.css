@@ -54,15 +54,15 @@ header{
     background-color: white;
 }
 
+header .container{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 header section{
     display: flex;
     position: relative;
-}
-
-header section h1{
-    position: absolute;
-    left: 100px;
-    top: 30px;
 }
 
 header .menu{
@@ -150,5 +150,28 @@ header .options{
     opacity: 0;
 }
 
+@media (min-width: 700px)
+{
+    header .options{
+        display: none;
+    }
 
+    header section{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    header .menu {
+        display: flex;
+        height: 100%;
+        margin: 0;
+    }
+
+    header ul {
+        flex-direction: row;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        gap: 30px;
+    }
+}
 
