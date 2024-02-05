@@ -1,11 +1,21 @@
 *, *::before, *::after{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --th-background:rgba(230,230,230,.5);
+    --hover-color: #3b9edf;
+    --button-color: #0067b8;
+    --hover-color: #3399e7;
 }
 
 #logo{
     width: 100px;
     height: 100px;
     object-fit: cover;
+    display: block;
 }
 
 img[src="Laptop.png"]{
@@ -13,3 +23,132 @@ img[src="Laptop.png"]{
     height: 300px;
     object-fit: cover;
 }
+
+body{
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.button, #submit{
+    background-color: var(--button-color);
+    color: #fff;
+    border: .125rem solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .2rem;
+}
+
+.button:hover, #submit:hover{
+    background-color: var(--hover-color);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+header section{
+    display: flex;
+    position: relative;
+}
+
+header section h1{
+    position: absolute;
+    left: 100px;
+    top: 30px;
+}
+
+header .menu{
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 700px){
+
+    header section{
+        flex-direction: column;
+    }
+
+    header .menu.show{
+        display: flex;
+    }
+
+    header ul{
+        height: 250px;
+        justify-content: space-between;
+        font-size: 2rem;
+    }
+
+    header ul li{
+        padding-bottom: 75px;
+    }
+}
+
+header ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: .75rem 0;
+}
+
+header ul a{
+    display: inline-block;
+}
+
+header ul a:hover{
+    color: var(--hover-color);
+}
+
+header .options{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 38px;
+    height: 45px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    border: none;
+}
+
+.options .bar, .options::before, .options::after{
+    content: '';
+    display: block;
+    background-color: #000;
+    width: 100%;
+    height: 4px;
+    margin: 8px 0;
+    border-radius: 7px;
+    transition: 0.4s;
+}
+
+.options:hover .bar{
+    transform: translateX(10px);
+    opacity: 50%;
+}
+
+.options.active:before{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.options.active:after{
+    transform: rotate(45deg) translate(-9px, -9px);
+}
+
+.options.active .bar{
+    opacity: 0;
+}
+
+
+

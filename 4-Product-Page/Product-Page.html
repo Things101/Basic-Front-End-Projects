@@ -2,26 +2,31 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
         <title>Product Page</title>
     </head>
     <body>
 
-        <header class="header">
-            <img id="logo" src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logo-iconlogobrand-logoiconslogos-251519939091wmudn.png">
-            <h1>Microsoft Laptops</h1>
-            <nav id="nav-bar" class="menu">
-                <ul>
-                    <li class="nav-link"><a href="#home">Home</a></li>
-                    <li class="nav-link"><a href="#surface-5">Surface Laptop 5</a></li>
-                    <li class="nav-link"><a href="#studio-2">Surface Laptop Studio 2</a></li>
-                    <li class="nav-link"><a href="#surface-3">Surface Laptop Go 3</a></li>
-                </ul>
-            </nav>
-            <button class="options">
-                <div class="bar"></div>
-            </button>
+        <header>
+            <section>
+                <div class="container">
+                    <img id="logo" src="https://purepng.com/public/uploads/large/purepng.com-microsoft-logo-iconlogobrand-logoiconslogos-251519939091wmudn.png" alt="Windows logo">
+                    <h1>Microsoft Laptops</h1>
+                </div>
+                <nav id="nav-bar" class="menu">
+                    <ul>
+                        <li class="nav-link"><a href="#home">Home</a></li>
+                        <li class="nav-link"><a href="#surface-5">Surface Laptop 5</a></li>
+                        <li class="nav-link"><a href="#studio-2">Surface Laptop Studio 2</a></li>
+                        <li class="nav-link"><a href="#surface-3">Surface Laptop Go 3</a></li>
+                    </ul>
+                </nav>
+                <button class="options">
+                    <div class="bar"></div>
+                </button>
+            </section>
+            <script src="script.js"></script>
         </header>
 
         <section id="home">
@@ -35,7 +40,7 @@
         <section>
             <form id="form" action="https://www.freecodecamp.com/email-submit">
                 <input id="email" type="email" placeholder="Enter your email address..." required>
-                <input id="submit" type="submit" value="Enroll in laptop deals">
+                <input id="submit" type="submit" value="Enroll In Laptop Deals">
             </form>
         </section>
 
@@ -115,7 +120,7 @@
             </div>
             <div id="pricing">
                 <h3>Starting From $799.99</h3>
-                <input type="button" value="Shop Now" href="#">
+                <a class="button" href="#">Shop Now</a>
             </div>
         </section>
 
@@ -184,7 +189,7 @@
             </div>
             <div id="pricing">
                 <h3>Starting From $1,799.99</h3>
-                <input type="button" value="Shop Now" href="#">
+                <a class="button" href="#">Shop Now</a>
             </div>
         </section>
 
@@ -238,7 +243,7 @@
             </div>
             <div id="pricing">
                 <h3>Starting From $699.99</h3>
-                <input type="button" value="Shop Now" href="#">
+                <a class="button" href="#">Shop Now</a>
             </div>
         </section>
 
@@ -250,6 +255,5 @@
             </ul>
             <p>Copyright 2024</p>
         </footer>
-
     </body>
 </html>
