@@ -19,13 +19,14 @@
 }
 
 img[src="Laptop.png"]{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
 }
 
 body{
     line-height: 1.5;
+    background-color: rgb(90, 87, 87);
 }
 
 a{
@@ -148,6 +149,16 @@ header .options{
 
 .options.active .bar{
     opacity: 0;
+}
+
+#home{
+    padding-top: 100px;
+    display: flex;
+}
+
+.left{
+    display: flex;
+
 }
 
 @media (min-width: 700px)
