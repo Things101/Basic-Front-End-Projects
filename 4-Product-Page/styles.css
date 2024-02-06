@@ -241,6 +241,19 @@ td li{
     list-style-type: none;
 }
 
+footer{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10%;
+    justify-content: flex-end;
+    padding-bottom: 3vh;
+    font-size: 1.2rem;
+}
+
+.pad-l{
+    padding-left: 10vw;
+}
+
 
 @media (min-width: 756px)
 {
