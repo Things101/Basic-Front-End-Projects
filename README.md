@@ -12,6 +12,6 @@ Mobile viewing is supported.
 
 ## Future Plans
 
-~Create new webpages with JS and various front end developmental libraries. This can include Bootstrap, React, Redux and jQuery.
-~Create webpages with back end APIs. The framework I will work with is to be determined.
-~Create a fullstack dynamic webpage using different technologies for the front-end and back-end side.
+-Create new webpages with JS and various front end developmental libraries. This can include Bootstrap, React, Redux and jQuery.
+-Create webpages with back end APIs. The framework I will work with is to be determined.
+-Create a fullstack dynamic webpage using different technologies for the front-end and back-end side.
