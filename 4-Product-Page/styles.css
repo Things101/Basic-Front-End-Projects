@@ -17,7 +17,7 @@
     display: block;
 }
 
-img[src="Laptop.png"]{
+img{
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -25,7 +25,7 @@ img[src="Laptop.png"]{
 
 body{
     line-height: 1.5;
-    background-color: #fff;
+    background-color: #f4f4ea;
     
 }
 
@@ -41,10 +41,14 @@ a{
     padding: .5rem 1rem;
     font-size: 1rem;
     border-radius: .2rem;
+    text-align: center;
 }
 
 input[id="email"]{
     padding: 10px;
+    border-radius: .3rem;
+    border: 1px solid gray;
+    font-size: 1.1rem;
 }
 
 .button:hover, #submit:hover{
@@ -88,11 +92,11 @@ header ul{
     margin: .75rem 0;
 }
 
-header ul a{
+a{
     display: inline-block;
 }
 
-header ul a:hover{
+footer a:hover{
     color: var(--hover-color);
 }
 
@@ -164,6 +168,80 @@ form{
     margin-right: 10%;
 }
 
+.items{
+    display: flex;
+    flex-direction: column;
+}
+
+#pricing{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20%;
+    margin-top: 3%;
+}
+
+#pricing img{
+    width: 20%;
+    height: 20%;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.right .button{
+    font-size: 1.5rem;
+}
+
+#information h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 5vh;
+    border: 0;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+caption{
+    font-size: 1.5rem;
+}
+
+tr th{
+    text-align: center;
+    background-color: var(--th-background);
+    width: 30%;
+    font-size: 1.25rem;
+}
+
+td ul{
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    padding-left: 2.5%;
+}
+
+td li{
+    font-size: initial;
+}
+
+td .margin-t{
+    margin-top: 5%;
+}
+
+td li{
+    list-style-type: none;
+}
+
+
 @media (min-width: 756px)
 {
     header .options{
@@ -225,5 +303,16 @@ form{
         padding-bottom: 10%;
     }
 
-}
+    .right{
+        font-size: 1rem;
+    }
+    
+    .right .button{
+        font-size: 1rem;
+    }
 
+    #information h1{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
